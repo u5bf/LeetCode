@@ -55,7 +55,7 @@ class Solution {
     vector<vector<int>> ans;
 
     void dfs(vector<int>& nums, int level, int size) {
-        if (level == size) {
+        if (level == size - 1) {
             this->ans.push_back(nums);
             return;
         }
@@ -67,8 +67,7 @@ class Solution {
     }
 public:
     vector<vector<int>> permute(vector<int>& nums) {
-        int size = nums.size();
-        dfs(nums, 0, size);
+        dfs(nums, 0, nums.size());
         return this->ans;
     }
 };
